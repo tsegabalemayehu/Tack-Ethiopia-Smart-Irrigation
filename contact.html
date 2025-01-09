@@ -26,7 +26,7 @@
             <h2>User Preferences</h2>
             <div class="button-container">
                 <input type="button" value="View Profile" onclick="location.href='profile.html'" class="button">
-                <input type="button" value="Logout" onclick="location.href='login.html'" class="button">
+                <input type="button" value="Logout" onclick="location.href='index.html'" class="button">
             </div>
             <h3>Navigation</h3>
             <div class="button-container">
@@ -50,13 +50,13 @@
 
         <form action="submit_form.php" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
+            <input type="text" id="name" name="name" required class="form-control"><br><br>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" required class="form-control><br>
 
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br>
+            <textarea id="message" name="message" rows="5" required   class="form-control ></textarea><br>
 
             <button type="submit">Send Message</button>
         </form>
