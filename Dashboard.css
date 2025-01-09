@@ -1,0 +1,153 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #3b8d3b;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .toggle-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        nav {
+            margin: 0; /* Adjusted for better alignment */
+        }
+        nav select {
+            margin-left: 15px; /* Reduced margin for better fit */
+        }
+    
+        @media (max-width: 600px) {
+            nav select {
+                margin-left: 0; /* Remove margin for narrow screens */
+            }
+            .toggle-button {
+                font-size: 20px; /* Adjust button size for mobile */
+            }
+        }
+    
+    .container {
+        display: flex;
+        margin-top: 60px; /* Space for header */
+        margin-bottom: 60px; /* Space for footer */
+        overflow: hidden;
+    }
+
+    .sidebar {
+        width: 250px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed; /* Fix the sidebar in place */
+        height: calc(100% - 60px); /* Full height minus header/footer */
+        overflow-y: auto; /* Enable vertical scrolling if needed */
+        transition: transform 0.3s ease; /* For animation */
+    }
+    
+    .main-content {
+        margin-left: 270px; /* Space for the sidebar */
+        padding: 20px;
+        flex-grow: 1; /* Allow it to grow */
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    canvas{
+            background-color: white; /* Background color for the canvas */
+            border: 10px solid #3b8d3b; /* Visible border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            width: 100%; /* Fill the container horizontally */
+            height: 300px; /* Fixed height, adjust as necessary */
+            margin-bottom: 20px; /* Space between charts */
+    }
+    .control-panel,
+    .settings {
+        background-color: white; /* Background color for each section */
+        border: 10px solid #3b8d3b; /* Visible border */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        width: 100%; /* Set a maximum width for boxes */
+        height: 400px; /* Fixed height, adjust as necessary */
+        margin-bottom: 20px; /* Space between sections */
+    }
+
+    .sidebar h2,
+    .sidebar h3 {
+        margin-top: 0; /* Remove top margin for better alignment */
+    }
+
+    .button {
+        width: 100%; /* Full width for buttons */
+        padding: 15px; /* Button padding */
+        background-color: #3b8d3b; /* Button background color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth background transition */
+        font-size: 16px; /* Consistent font size */
+        text-align: left; /* Align text to the left */
+        margin-bottom: 10px; /* Space between buttons */
+    }
+
+    .button:hover {
+        background-color: #2a682a; /* Darker shade on hover */
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .sidebar {
+            display: none; /* Hide sidebar by default on small screens */
+        }
+
+        .sidebar.active {
+            display: block; /* Show sidebar when active */
+            position: absolute; /* Position it over the content */
+            left: 0; /* Align left */
+            top: 0; /* Align top */
+            height: calc(100% - 60px); /* Full height minus header/footer */
+            z-index: 1000; /* Ensure it is above other content */
+        }
+
+        .main-content {
+            margin-left: 0; /* Remove margin for mobile view */
+            padding: 10px; /* Reduce padding for mobile */
+        }
+    }
+
+        footer {
+            background: #3b8d3b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        /* Optional: Add some padding to the main content to avoid overlap */
+        .main-content {
+            padding-bottom: 50px; /* Adjust based on footer height */
+        }

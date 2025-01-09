@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation System</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Changed to column for better stacking */
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+            background-color: #055b20;
+            font-size: 20px;
+            color: white;
+            text-align: center; /* Center text for all elements */
+          }
+          .boarder {
+            margin: 10px;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10%;
+          }
+          .input-field {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            transition: border-color 0.3s;
+            text-align: center;
+          }
+          .input-field:focus {
+            border-color: #4CAF50;
+            outline: none;
+          }
+          input[type="submit"] {
+            cursor: pointer; /* Change cursor to pointer on hover */
+          }
+          @media (max-width: 400px) {
+            .input-field {
+              width: 90%; /* Make input fields responsive on small screens */
+            }
+          }
+        </style>
+</head>
+<body>
+    <div class="center-container">
+        <img src="Smart Irrigation Logo.jpg" alt="Smart Irrigation Logo"> 
+        <div class="boarder">
+          <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" required><br><br>
+      
+                  <label for="full-name">Full Name:</label>
+                  <input type="text" id="full-name" name="full_name" required><br><br>
+      
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required><br><br>
+      
+                  <label for="phone">Phone:</label>
+                  <input type="tel" id="phone" name="phone" required><br><br>
+      
+                  <a href="Login.html">
+                      <input type="submit" value="Create" class="input-field">
+                    </a>
+    </div>
+
+</div>
+</body>
+</html>

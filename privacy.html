@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Smart Irrigation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header, .footer {
+            background-color: #3b8d3b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #f4f8f4;
+        }
+        a,h2 {
+            color: #3b8d3b;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Privacy Policy</h1>
+    </div>
+
+    <div class="container">
+        <h2>Introduction</h2>
+        <p>Welcome to the Smart Irrigation System. This privacy policy outlines how we collect, use, and protect your information when you use our services.</p>
+
+        <h2>Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email address, phone number, etc.</li>
+            <li><strong>Usage Data:</strong> Information about how you use our services.</li>
+            <li><strong>Cookies:</strong> Data stored on your device to enhance your experience.</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>Your information may be used in the following ways:</p>
+        <ul>
+            <li>To provide and maintain our services.</li>
+            <li>To notify you about changes to our services.</li>
+            <li>To allow you to participate in interactive features of our service.</li>
+            <li>To provide customer support.</li>
+            <li>To gather analysis or valuable information so that we can improve our services.</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>We take the security of your data seriously and implement various measures to protect your personal information. However, no method of transmission over the internet or method of electronic storage is 100% secure.</p>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access your personal information.</li>
+            <li>Request correction of your personal information.</li>
+            <li>Request deletion of your personal information.</li>
+            <li>Withdraw consent for processing your data.</li>
+        </ul>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this privacy policy, please contact us:</p>
+        <p>Email: <a href="mailto:tackethiosi.com">support@smartirrigation.com</a></p>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Smart Irrigation System | <a href="Dashboard.html" style="color: white;">Home</a></p>
+    </div>
+    <script>
+        const toggleButton = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+ 
+      let moistureChart, weatherChart, rainChart, humidityChart, acidityChart;
+
+      function createMoistureChart(data) {
+          const ctx = document.getElementById('moistureChart').getContext('2d');
+          moistureChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: data.labels,
+                  datasets: [{
+                      label: 'Soil Moisture Level (%)',
+                      data: data.values,
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                      borderWidth: 2,
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Moisture Level (%)'
+                          }
+                      }
+                  }
+              }
+          });
+      }
+
+      function createWeatherChart(data) {
+          const ctx = document.getElementById('weatherChart').getContext('2d');
+          weatherChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: data.labels,
+                  datasets: [{
+                      label: 'Temperature (°C)',
+                      data: data.values,
+                      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1,
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Temperature (°C)'
+                          }
+                      }
+                  }
+              }
+          });
+      }
+
+      function createRainChart(data) {
+          const ctx = document.getElementById('rainChart').getContext('2d');
+          rainChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: data.labels,
+                  datasets: [{
+                      label: 'Rainfall (mm)',
+                      data: data.values,
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                      borderWidth: 2,
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Rainfall (mm)'
+                          }
+                      }
+                  }
+              }
+          });
+      }
+
+      function createHumidityChart(data) {
+          const ctx = document.getElementById('humidityChart').getContext('2d');
+          humidityChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: data.labels,
+                  datasets: [{
+                      label: 'Humidity (%)',
+                      data: data.values,
+                      borderColor: 'rgba(255, 206, 86, 1)',
+                      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                      borderWidth: 2,
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Humidity (%)'
+                          }
+                      }
+                  }
+              }
+          });
+      }
+
+      function createAcidityChart(data) {
+          const ctx = document.getElementById('acidityChart').getContext('2d');
+          acidityChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: data.labels,
+                  datasets: [{
+                      label: 'Soil Acidity (pH)',
+                      data: data.values,
+                      borderColor: 'rgba(153, 102, 255, 1)',
+                      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                      borderWidth: 2,
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Soil Acidity (pH)'
+                          }
+                      }
+                  }
+              }
+          });
+      }
+
+      function refreshData() {
+          // Simulate fetching data
+          const moistureData = {
+              labels: ['1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM'],
+              values: [30, 45, 50, 55, 40, 35]
+          };
+          const weatherData = {
+              labels: ['1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM'],
+              values: [20, 21, 22, 20, 19, 18]
+          };
+          const rainData = {
+              labels: ['1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM'],
+              values: [0, 5, 0, 2, 0, 1]
+          };
+          const humidityData = {
+              labels: ['1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM'],
+              values: [60, 65, 70, 68, 63, 64]
+          };
+          const acidityData = {
+              labels: ['1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM'],
+              values: [6.5, 6.3, 6.8, 6.4, 6.6, 6.7]
+          };
+
+          createMoistureChart(moistureData);
+          createWeatherChart(weatherData);
+          createRainChart(rainData);
+          createHumidityChart(humidityData);
+          createAcidityChart(acidityData);
+      }
+
+      function startIrrigation() {
+          alert("Irrigation started!");
+      }
+
+      function stopIrrigation() {
+          alert("Irrigation stopped!");
+      }
+
+      function scheduleIrrigation() {
+          const time = document.getElementById('irrigation-time').value;
+          const duration = document.getElementById('duration').value;
+          if (time && duration) {
+              alert(`Irrigation scheduled at ${time} for ${duration} minutes.`);
+              // Here you would send the schedule to the backend
+          } else {
+              alert("Please select both time and duration.");
+          }
+      }
+
+      function getCurrentSchedule() {
+          // Simulate fetching current schedule
+          alert("Current Irrigation Schedule: 6:00 AM for 30 minutes.");
+      }
+
+      function getSystemStatus() {
+          // Simulate fetching system status
+          alert("System Status: Irrigation is currently OFF. Last run at 5:30 AM.");
+      }
+
+      function setThreshold() {
+          const moistureThreshold = document.getElementById('moisture-threshold').value;
+          const acidityThreshold = document.getElementById('acidity-threshold').value;
+          alert(`Moisture threshold set to ${moistureThreshold}%, Acidity threshold set to ${acidityThreshold} pH.`);
+          // Here you would send the thresholds to the backend
+      }
+
+      function saveNotificationSettings() {
+          const notifySchedule = document.getElementById('notify-schedule').checked;
+          const notifyThreshold = document.getElementById('notify-threshold').checked;
+          alert(`Notification settings saved:\nSchedule Changes: ${notifySchedule}\nThreshold Alerts: ${notifyThreshold}`);
+          // Here you would send notification settings to the backend
+      }
+
+      function exportData() {
+          alert("Data exported as CSV.");
+          // Implement actual data export logic
+      }
+
+      // Initial data fetch
+      refreshData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For responsive design -->
+  <title>Dashboard</title>
+  <link rel="icon" href="Smart Irrigation Logo.jpg">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column; /* Changed to column for better stacking */
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      margin: 0;
+      background-color: #055b20;
+      font-size: 20px;
+      color: white;
+      text-align: center; /* Center text for all elements */
+    }
+    .boarder {
+      margin: 10px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10%;
+    }
+    .input-field {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      transition: border-color 0.3s;
+      text-align: center;
+    }
+    .input-field:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    input[type="submit"] {
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    @media (max-width: 400px) {
+      .input-field {
+        width: 90%; /* Make input fields responsive on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="center-container">
+    <img src="Smart Irrigation Logo.jpg" alt="Smart Irrigation Logo"> <!-- Added alt text for accessibility -->
+    <div class="boarder">
+      <label for="username">UserName:</label><br>
+      <input type="text" id="username" class="input-field" placeholder="Enter Your Name" required><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" class="input-field" placeholder="Password" required><br><br>
+      <a href="Dashboard.html">
+        <input type="submit" value="Login" class="input-field">
+      </a><br><br>
+      Don't Have an Account?<br>
+      <a href="create-account.html">
+        <input type="submit" value="Register" class="input-field">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
